@@ -34,7 +34,8 @@
 	- id_spell (integer)
 
 ## 2.2 REGISTRANDO NO BANCO
-	- Abra o __pgAdmin 4__; na barra lateral, clique em __Servers__, então em __PostgreSQL 15__ e em __Databases__;
-	- Clique com o botão direito em Databases e escolha a opção "Create";
-	- Defina o nome do banco de dados, o proprietário e outras opções adicionais e clique em "Save".
+
+- Abra o __pgAdmin 4__; na barra lateral, clique em __Servers__, então em __PostgreSQL 15__ e em __Databases__;
+- Clique com o botão direito em Databases e escolha a opção "Create";
+- Defina o nome do banco de dados, o proprietário e outras opções adicionais e clique em "Save".
 
