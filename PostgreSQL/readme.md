@@ -96,3 +96,13 @@
     principal varchar(255) not null,
     place varchar(255)
     )
+
+#### 2.2.2.5 Tabela-pivô "Wizard_Spell"
+
+    CREATE TABLE Wizard_Spell (
+    id_wizard integer not null,
+    id_spell integer not null,
+
+    FOREIGN KEY (id_wizard) REFERENCES Wizard (id_wizard),
+    FOREIGN KEY (id_spell) REFERENCES Spell (id_spell)
+    )
