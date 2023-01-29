@@ -60,7 +60,7 @@
     name_wizard varchar(100) not null,
     wisdom integer(3) not null,
     intelligence integer(3) not null,
-    birth_date integer,
+    birth_date date,
     id_school integer,
     FOREIGN KEY (id_school) REFERENCES School (id_school)
     )
@@ -106,3 +106,15 @@
     FOREIGN KEY (id_wizard) REFERENCES Wizard (id_wizard),
     FOREIGN KEY (id_spell) REFERENCES Spell (id_spell)
     )
+
+### 2.2.3 Inserir dados nas tabelas
+
+#### 2.2.3.1 Criando uma nova Escola
+
+    INSERT INTO School (name_school, principal, place) VALUES ('Gliamselv Tower', 'Gliaczan II', 'Kingdom of Faline')
+
+-   O comando **insert into** requer o nome da tabela onde vão ser inseridos os dados (School), as colunas e seus respectivos valores; caso sejam do tipo string, devem ser escritos entre aspas simples.
+
+#### 2.2.3.2 Criando um novo Mago
+
+    INSERT INTO Wizard (name_wizard, wisdom, intelligence, birth_date, id_school) VALUES ('Leirdan', 14, 17, '17-02-2004', 1)
