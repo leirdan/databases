@@ -118,3 +118,14 @@
 #### 2.2.3.2 Criando um novo Mago
 
     INSERT INTO Wizard (name_wizard, wisdom, intelligence, birth_date, id_school) VALUES ('Leirdan', 14, 17, '17-02-2004', 1)
+
+#### 2.2.3.3 Criando Categorias dos feitiços
+
+    1. Ilusão: INSERT INTO Category (name_category, description) VALUES ('Illusion', 'Spells to deceive and confuse enemies minds.')
+    2. Evocação: INSERT INTO Category (name_category, description) VALUES ('Evocation', 'Spells to evoke magical elements with high destructive power.')
+
+#### 2.2.3.4 Criando novos Feitiços
+
+    1. Change Self: INSERT INTO Spell (name_spell, description, level, id_category) VALUES ('Change Self', 'This spell enables the Illusionist to alter the appearance of his or her form - including clothing and equipment - to appear 1" shorter or taller; thin, fat, or in between; human, humanoid, or any other generally man-shaped bipedal creature. The duration of the spell is 2 to 12 (2d6) rounds base plus 2 additional rounds per level of experience of the spell caster.', 1, 1)
+    2. Magic Missile: INSERT INTO Spell (name_spell, description, level, id_category) VALUES ('Magic Missile', 'Use of the Magic Missile spell creates one or more magical missiles which dart forth from the magic-users fingertip and unerringly strike their target. Each missile does 2 to 5 hit points (d4+1) of damage. If the magic-user has multiple missile capability, he or she can have them strike a single target creature or several creatures, as desired. For each level of experience of the magic-user, the range of his or her Magic Missile extends 1" beyond the 6" base range. For every 2 levels of experience, the magic-user gains an additional missile, i.e. 2 at 3rd level, 3 at 5th level, 4 at 7th level, etc.', 1, 2).
+    3. INSERT INTO Spell (name_spell, description, level, id_category) VALUES ('Nystul"s Magic Aura', 'By means of this spell any one item of a weight of 50 g.p. per level of experience of the spell caster can be given an aura which will be noticed if detection of magic is exercised upon the object. If the object bearing the Nystul"s Magic Aura is actually held by the creature detecting for a dweomer, he, she or it is entitled to a saving throw versus magic, and if this throw is successful, the creature knows that the aura has been placed to mislead the unwary. Otherwise, the aura is simply magical, but no amount of testing will reveal what the magic is. The component for this spell is a small square of silk which must be passed over the object to bear the aura.', 1, 1)
