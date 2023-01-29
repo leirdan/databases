@@ -67,3 +67,15 @@
 
 -   Vale notar que, para determinar um número que se auto incrementa, é usada a palavra reservada **serial** no atributo desejado.
 -   A última linha faz o relacionamento entre esta tabela e a tabela "School" por meio de uma chave estrangeira "id_school".
+
+#### 2.2.2.2 Tabela "Spell"
+
+    CREATE TABLE Spell (
+    id_spell serial primary key,
+    name_spell varchar(255) not null,
+    description text not null,
+    level smallint not null,
+    id_category integer not null,
+
+    FOREIGN KEY (id_category) REFERENCES Category (id_category)
+    )
