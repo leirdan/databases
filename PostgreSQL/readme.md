@@ -79,3 +79,11 @@
 
     FOREIGN KEY (id_category) REFERENCES Category (id_category)
     )
+
+#### 2.2.2.3 Tabela "Category"
+
+    CREATE TABLE Category (
+    id_category serial primary key,
+    name_category varchar(255) not null,
+    description text
+    )
