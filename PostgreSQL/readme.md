@@ -87,3 +87,12 @@
     name_category varchar(255) not null,
     description text
     )
+
+#### 2.2.2.4 Tabela "School"
+
+    CREATE TABLE School (
+    id_school serial primary key,
+    name_school varchar(255) not null,
+    principal varchar(255) not null,
+    place varchar(255)
+    )
