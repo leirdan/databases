@@ -135,3 +135,9 @@
     INSERT INTO Wizard_Spell (id_wizard, id_spell) VALUES (1, 2)
 
 -   O mago com ID 1 (Leirdan) vai poder usar o feitiço "Magic Missile" (id 2) agora.
+
+### 2.2.4 Edição de dados
+
+    UPDATE School SET principal = 'Glakzan' WHERE principal = 'Gliaczan II'
+
+-   Usa-se o comando **update** para definir a tabela, depois o **set** para definir o novo valor da coluna e **where** para definir onde será aplicada a atualização.
