@@ -146,3 +146,27 @@
     DELETE FROM Spell WHERE id_spell = 1
 -   Usa-se o comando **delete** para especificar a operação, o **from** para definir qual a tabela que vai ser alvo da operação e **where** para definir a condição que a coluna deve atender para ser excluída.	
 -   Neste caso, será excluída a magia que tem o ID 1 ('Change Self').
+
+## 2.3 CONSULTANDO O BANCO
+
+### 2.3.1 Comando "SELECT"
+#### 2.3.1.1 Consulta simples
+    SELECT * FROM Spell
+- Essa consulta retorna todos as colunas com todos os campos (*) da tabela Spell.
+#### 2.3.1.2 Consulta de apenas uma coluna
+    SELECT name_spell FROM Spell
+- Essa consulta retorna os valores de todas as colunas **name_spell** da tabela Spell.
+#### 2.3.1.3 Consulta de duas ou mais colunas
+    SELECT name_category, description FROM Category
+- Retorna os valores das colunas **name_category** e **description** da tabela Category.
+#### 2.3.1.4 Uso de "ORDER BY"
+- Sem usar o "Order By", a listagem vai ser ordenada de acordo com as modificações; se uma linha teve um update, ela vai ser listada abaixo das que não tiveram, e assim em diante.
+##### 2.3.1.4.1 Ordenação simples
+    SELECT name_category, description FROM Category ORDER BY name_category ASC
+- Retorna os nomes das categorias ordenados em ordem alfabética, apenas.
+##### 2.3.1.4.2 Ordenação de duas colunas
+    SELECT name_wizard, intelligence, birth_date FROM Wizard ORDER BY name_wizard, intelligence
+- Retorna os nomes dos magos em ordem alfabética; caso hajam magos com o mesmo nome, a ordenação será feita a partir da coluna **intelligence** de forma ascendente - ou seja, em uma suposta situação, a listagem seria "Leirdan | 14" ; "Leirdan | 17"; "Lutz | 13"
+#### 2.3.1.5 Uso de "WHERE"
+     SELECT * FROM Category WHERE name_category = 'Illusion'
+- Retorna todos dos dados da categoria que for chamada "Illusion"
