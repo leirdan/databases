@@ -141,3 +141,8 @@
     UPDATE School SET principal = 'Glakzan' WHERE principal = 'Gliaczan II'
 
 -   Usa-se o comando **update** para definir a tabela, depois o **set** para definir o novo valor da coluna e **where** para definir onde será aplicada a atualização.
+
+### 2.2.5 Excluindo um dado
+    DELETE FROM Spell WHERE id_spell = 1
+-   Usa-se o comando **delete** para especificar a operação, o **from** para definir qual a tabela que vai ser alvo da operação e **where** para definir a condição que a coluna deve atender para ser excluída.	
+-   Neste caso, será excluída a magia que tem o ID 1 ('Change Self').
