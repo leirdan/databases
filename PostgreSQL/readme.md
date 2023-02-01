@@ -225,3 +225,10 @@
 
 -   O **RIGHT JOIN** faz a comparação entre _cada_ linha da tabela da direita (Category) com _todas_ as linhas da tabela da esquerda (Spell), ou seja, o inverso do left join, e retorna todas as linhas da tabela à direita e as da esquerda que atendem à condição da busca.
 -   Neste caso, o resultado também é o mesmo das consultas com _inner_ e _left join_.
+
+#### 2.3.2.4 "FULL JOIN"
+
+    SELECT name_spell, id_spell, name_category, Spell.id_category FROM Spell FULL JOIN Category ON Spell.id_category = Category.id_category
+
+-   Uma espécie de junção entre o _left_ e _right join_, retornando apenas as linhas das duas tabelas que atendem à condição da busca; se uma linha da tabela à esquerda não tem o mesmo dado que a linha da direita, elas duas não vão ser exibidas.
+-   Neste caso, teve o mesmo resultado que as consultas anteriores.
