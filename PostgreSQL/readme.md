@@ -199,3 +199,15 @@
 
 -   Retorna os dados que tiverem a columa "wisdom" com valor 14 ou 13.
     -   Pode-se fazer quantos "OR" quiser.
+
+### 2.3.2 Comandos "JOIN" em relacionamentos
+
+#### 2.3.2.1 "INNER JOIN"
+
+    SELECT name_spell, id_spell, name_category, Spell.id_category FROM Spell INNER JOIN Category ON Spell.id_category = Category.id_category
+
+-   O **INNER JOIN** compara cada linha das duas tabelas para encontrar a condição que satisfaz a busca; se a condição for atendida, uma nova linha é gerada contendo os dados das duas tabelas.
+-   No exemplo, a seleção é feita nas tabelas Spell e Category para que sejam listados os feitiços e categorias que tiverem os valores de "id_category" correspondentes.
+-   No final, a consulta retornou duas linhas:
+    -   A primeira trouxe os valores: "Magic Missile", 2 e "Evocation". (o ID de Evocation [2] é o mesmo guardado na magia "Magic Missile")
+    -   A segunda trouxe os valores: "Nystul's Magic Aura", 3 e "Illusion". (o id de Illusion [1] é o mesmo guardado em "Nystul's Magic Aura")
