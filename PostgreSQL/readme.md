@@ -211,3 +211,10 @@
 -   No final, a consulta retornou duas linhas:
     -   A primeira trouxe os valores: "Magic Missile", 2 e "Evocation". (o ID de Evocation [2] é o mesmo guardado na magia "Magic Missile")
     -   A segunda trouxe os valores: "Nystul's Magic Aura", 3 e "Illusion". (o id de Illusion [1] é o mesmo guardado em "Nystul's Magic Aura")
+
+#### 2.3.2.2 "LEFT JOIN"
+
+     SELECT name_spell, id_spell, name_category, Spell.id_category FROM Spell LEFT JOIN Category ON Spell.id_category = Category.id_category
+
+-   O **LEFT JOIN** faz a comparação entre _cada_ linha da tabela da esquerda (Spell) com _todas_ as linhas da tabela da direita (Category) e retorna todas as linhas da tabela à esquerda e as linhas da tabela à direita que fazem alguma correspondência com a tabela à esquerda.
+-   Neste caso, o resultado é o mesmo da consulta com _inner join_.
