@@ -43,3 +43,13 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
     e baixe o arquivo executável.
 -   Após isso, execute o arquivo, dê um "next" em tudo e instale o shell do mongo.
 -   Para acessar este terminal, abra o seu Powershell ou Prompt de Comando e digite **mongosh**. Após inserir este comando, será possível acessar o banco de dados MongoDB a partir do terminal.
+
+# 3. MONGODB COMPASS
+
+-   O Compass é uma interface do MongoDB onde é possível visualizar as coleções e documentos e realizar operações de forma mais visível e simplificada.
+
+## 3.1 Conectar a um database
+
+-   Existem duas opções iniciais no Compass:
+    -   A primeira consiste em usar uma "connection string" (uma URL especial do MongoDB) para se conectar a uma database online, por exemplo, e interagir com ela a partir do Compass.
+    -   A segunda (e que vou usar) é apenas clicar em "Connect" e deixar o campo da connection string vazio, pois assim o MongoDB Compass vai se conectar à sua máquina local, e não online.
