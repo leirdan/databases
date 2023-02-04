@@ -21,6 +21,7 @@ O MongoDB é um SGBD (Sistema Gerencial de Banco de Dados) do tipo NoSQL - ou se
     ```
 
     -   Neste caso, em uma Collection de "Songs" o seguinte documento detalhando uma música tem outro documento dentro de si, que detalha a banda que a compôs e tem propriedades próprias.
+    -   Detalhe importante: cada documento de uma coleção tem um atributo **\_id** do tipo **ObjectId**, um identificador único de cada documento.
 
 Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O MongoDB também é um banco de dados bastante rápido.
 
