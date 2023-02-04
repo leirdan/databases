@@ -53,3 +53,16 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 -   Existem duas opções iniciais no Compass:
     -   A primeira consiste em usar uma "connection string" (uma URL especial do MongoDB) para se conectar a uma database online, por exemplo, e interagir com ela a partir do Compass.
     -   A segunda (e que vou usar) é apenas clicar em "Connect" e deixar o campo da connection string vazio, pois assim o MongoDB Compass vai se conectar à sua máquina local, e não online.
+
+## 3.2 Visualizando databases
+
+-   Na página que foi aberta ao realizar a operação acima estarão listadas todas as databases que existem em seu computador. Por padrão, são criadas 3 databases: "admin", "config" e "local".
+-   Para criar uma nova database, vá na barra "Databases", clique no ícone de "+" no fim da barra, defina o nome da database e pelo menos uma coleção. Após isso, clique em "Create Database" e sua database será criada.
+-   Para deletar uma database, passe o _mouse_ por cima de seu nome e clique no ícone de lixeira.
+
+## 3.3 Acessando databases e coleções
+
+-   Clique em uma database para acessá-la. Dentro, serão listadas as coleções que fazem parte e, clicando em uma coleção, serão listados os documentos que fazem parte dela.
+
+-   Para criar uma coleção em um banco de dados, clique em **Create Collection** já dentro da database desejada e insira seu nome.
+-   Para deletar uma coleção, vá na barra lateral e, na database desejada, clique nas reticências que aparecem ao passar o _mouse_ por cima da coleção desejada e escolha **Drop Collection**.
