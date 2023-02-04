@@ -63,6 +63,18 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 ## 3.3 Acessando databases e coleções
 
 -   Clique em uma database para acessá-la. Dentro, serão listadas as coleções que fazem parte e, clicando em uma coleção, serão listados os documentos que fazem parte dela.
-
 -   Para criar uma coleção em um banco de dados, clique em **Create Collection** já dentro da database desejada e insira seu nome.
 -   Para deletar uma coleção, vá na barra lateral e, na database desejada, clique nas reticências que aparecem ao passar o _mouse_ por cima da coleção desejada e escolha **Drop Collection**.
+
+## 3.4 Acessando documentos
+
+-   Ao entrar em uma coleção, como dito, vão ser listados os documentos dela.
+-   Para adicionar um novo documento, na aba "Documents", clique em **Add Data** e defina se o documento será um arquivo a ser importado ou se ele será escrito na hora.
+
+    -   Ao escolher a opção **Insert document**, uma janela será exibida para você adicionar manualmente o documento. Ele deverá ser escrito como um objeto JSON, ou seja, baseado em pares de chave-valor (ex.: "nome": "cenoura"). Ao fim, clique em **Insert** para inserir o documento.
+    -   Caso queira inserir mais de um documento simultaneamente, coloque um colchete "[]" abrindo e outro fechando todo o objeto antes das chaves "{}", e, a cada documento, coloque uma vírgula entre um e outro.
+
+-   Para deletar, duplicar ou atualizar o documento, passe com o _mouse_ por cima dele e clique em um dos ícones que simboliza a operação desejada.
+
+-   Para filtrar um ou mais documentos específicos, na barra de nome **Filter**, insira por qual campo do documento será feita a filtragem e qual o valor buscado na forma de um objeto JSON.
+    -   Exemplo de busca: `{ autor: "George R.R Martin" }` -> retornará todos os documentos que tenham o valor "George R.R Martin" no campo de "autor".
