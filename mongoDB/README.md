@@ -151,5 +151,16 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
     -   `db.clientes.find({}, { primeiro_nome: 1 })`
 
 -   **db.produtos.findOne({...})**: método que busca por um único documento a partir do campo e do valor passados como parâmetros.
+
     -   Exemplo: buscar somente o produto "cenoura".
         `db.produtos.findOne({nome: "cenoura"})`
+
+-   **db.clientes.find().count()**: método que retorna o número de documentos totais em uma coleção. Caso queira, é possível fazer a filtragem no método ".find()" como descrito acima para retornar o número de clientes que, por exemplo, têm o mesmo endereço.
+
+-   **db.clientes.find().limit(...)**: método que retorna um número de linhas passadas dentro de ".limit()", como por exemplo 3 linhas - limit(3).
+
+-   **db.clientes.find().sort({...})**: método que retorna uma lista ordenada de documentos. A ordenação é feita dentro da função ".sort()" que recebe um objeto JSON com o nome do campo por onde a lista vai ser ordenada e um valor "1" (lista crescente) ou "-1" (lista decrescente).
+
+    -   Exemplo: listar os clientes em ordem alfabética.
+
+    -   `db.clientes.find().sort({primeiro_nome: 1})`
