@@ -85,11 +85,9 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 -   Como forma de testar as operações e aprender a manipular o mongodb, vou utilizar o seguinte banco de dados:
     -   Database **Mercearia**
         -   Collection **Produtos**
-            -   Campos dos documentos: **nome**, **preço/kg**, **descrição**, **categoria**, **ncm**;
+            -   Campos dos documentos: **nome**, **preço (unitário)\*, **descrição**, **categoria**, **ncm\*\*;
         -   Collection **Clientes**
             -   Campos dos documentos: **primeiro nome**, **último nome**, **endereço**;
-        -   Collection **Categorias**
-            -   Campos dos documentos: **nome**.
 
 ## 4.1 Comandos básicos
 
@@ -99,3 +97,59 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 -   **use mercearia**: troca para a database "mercearia" ou qualquer outra que você queira, basta apenas trocar o nome "mercearia" pela database desejada;
     -   Importante: você pode trocar para qualquer database, ela existindo ou não. Caso o faça, a database só será criada de fato quando inserir uma coleção nela.
 -   **show collections**: exibe todas as coleções dentro da database;
+    -   Importante: você pode, simultaneamente, criar uma coleção e inserir um documento dentro dela. Basta usar os comandos listados abaixo normalmente, já que um "db.clientes.insertOne({...})" é capaz de criar a coleção e o documento inserido.
+
+## 4.2 Comandos de manipulação de documentos
+
+### 4.2.1 Inserção
+
+-   **db.produtos.insertOne({...})**: a função "insertOne()" insere um único documento na database, e esse documento é inserido na forma de um objeto JSON.
+    -   O documento inserido foi:
+    ```json
+    {
+        _id: ObjectId("63dfc81e13c95341ad23f5d9"),
+        nome: 'arroz branco',
+        'preço': 5,
+        descricao: 'fino arroz branco da marca Lalilulelou',
+        categoria: { descricao: 'alimentos perecíveis' },
+        ncm: 100610
+    }
+    ```
+-   **db.clientes.insertMany([{...}, {...}])**: a função "insertMany()" é capaz de inserir mais de um documento ao mesmo tempo.
+
+    -   Documentos inseridos:
+
+    ```json
+    [
+        {
+            _id: ObjectId("63dfcd3213c95341ad23f5da"),
+            primeiro_nome: 'François',
+            ultimo_nome: 'Lacerda',
+            'endereço': 'Rua dos Vagalumes, nº 42'
+        },
+        {
+            _id: ObjectId("63dfcd3213c95341ad23f5db"),
+            primeiro_nome: 'Augusto',
+            ultimo_nome: 'Souza',
+            'endereço': 'Avenida Barbeiro Barbosa'
+        }
+    ]
+    ```
+
+### 4.2.2 Listagem
+
+-   **db.clientes.find()**: método que, inserido assim, retorna os 20 primeiros documentos de uma coleção. Caso queira buscar algum em específico, insira, entre os (), o campo e o valor desejado (exatamente como no Compass).
+
+    -   Exemplo: buscar apenas o cliente "Augusto".
+
+    -   `db.clientes.find({primeiro_nome: "Augusto"})`
+
+-   Caso queira buscar somente alguns campos do documento, não todos, após chamar o método ".find()" defina um objeto vazio e, após ele, um outro objeto contendo apenas os campos que deseja selecionar seguidos do número 1.
+
+    -   Exemplo: buscar apenas o primeiro nome de todos os clientes.
+
+    -   `db.clientes.find({}, { primeiro_nome: 1 })`
+
+-   **db.produtos.findOne({...})**: método que busca por um único documento a partir do campo e do valor passados como parâmetros.
+    -   Exemplo: buscar somente o produto "cenoura".
+        `db.produtos.findOne({nome: "cenoura"})`
