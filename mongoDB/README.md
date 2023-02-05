@@ -78,3 +78,24 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 
 -   Para filtrar um ou mais documentos específicos, na barra de nome **Filter**, insira por qual campo do documento será feita a filtragem e qual o valor buscado na forma de um objeto JSON.
     -   Exemplo de busca: `{ autor: "George R.R Martin" }` -> retornará todos os documentos que tenham o valor "George R.R Martin" no campo de "autor".
+
+# 4. MONGODB SHELL
+
+-   Para acessar o terminal do mongodb, apenas digite **mongosh** no prompt de comando, Powershell ou outro terminal e tecle _enter_ para entrar.
+-   Como forma de testar as operações e aprender a manipular o mongodb, vou utilizar o seguinte banco de dados:
+    -   Database **Mercearia**
+        -   Collection **Produtos**
+            -   Campos dos documentos: **nome**, **preço/kg**, **descrição**, **categoria**, **ncm**;
+        -   Collection **Clientes**
+            -   Campos dos documentos: **primeiro nome**, **último nome**, **endereço**;
+        -   Collection **Categorias**
+            -   Campos dos documentos: **nome**.
+
+## 4.1 Comandos básicos
+
+-   **help**: lista os comandos;
+-   **cls**: limpa o terminal das informações anteriores;
+-   **show dbs**: lista todas as databases criadas no seu computador;
+-   **use mercearia**: troca para a database "mercearia" ou qualquer outra que você queira, basta apenas trocar o nome "mercearia" pela database desejada;
+    -   Importante: você pode trocar para qualquer database, ela existindo ou não. Caso o faça, a database só será criada de fato quando inserir uma coleção nela.
+-   **show collections**: exibe todas as coleções dentro da database;
