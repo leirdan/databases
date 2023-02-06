@@ -164,3 +164,22 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
     -   Exemplo: listar os clientes em ordem alfabética.
 
     -   `db.clientes.find().sort({primeiro_nome: 1})`
+
+### 4.2.3 Operadores
+
+-   Utilizados para elaborar consultas mais complexas. São eles:
+    -   $gt: "greater than" (maior que)
+    -   $lt: "less than" (menor que)
+    -   $lte ou $gte: "less than or equal" (menor que ou igual) e "greater than or equal" (maior que ou igual)
+    -   $or: "ou".
+-   Exemplo 01: listar apenas produtos que tem preço maior que R$4.00
+
+    -   `db.produtos.find({preço: {$gt: 4}})`
+
+-   Exemplo 02: listar os produtos com preço menor que R$3.00 e que são da categoria "vegetais"
+
+-   `db.produtos.find({preco: {$lt: 3}}, {categoria: {descricao: "vegetais"}})`
+
+-   Exemplo 03: listar clientes que morem no endereço "Avenida Barbeiro Barbosa" ou tenham o sobrenome "Lacerda".
+
+-   `db.clientes.find({$or: [{endereço: 'Avenida Barbeiro Barbosa'}, {ultimo_nome: "Lacerda"}] })`
