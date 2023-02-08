@@ -204,3 +204,16 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 -   **db.clientes.deleteMany({...})**: método que deleta vários documentos a partir de um único campo.
     -   Exemplo: deletar todos os clientes que têm "Lacerda" no sobrenome
         -   `db.clientes.deleteMany({ultimo_nome: "Lacerda"})`
+
+### 4.2.5 Atualização
+
+-   **db.clientes.updateOne({...locate}, {...set})**: método que recebe dois parâmetros, um para localizar o documento (preferencialmente o id desse documento) e o outro para atualizar os campos desejados.
+
+    -   Exemplo: atualizar o endereço do cliente "Augusto Souza"
+        -   `db.clientes.updateOne({primeiro_nome: "Augusto"}, {$set: {endereço: "Rua Mártir Azul"}})`
+
+-   **db.produtos.updateMany({...locate}, {...set})**: similar ao anterior, mas dessa vez atua em mais de um documento.
+    -   Exemplo 01: mudar a descrição da categoria de "vegetal" para "legumes"
+        -   `db.produtos.updateMany({"categoria.descricao": "vegetal"}, {$set: {"categoria.descricao": "legumes"}})`
+    -   Exemplo 02: mudar o NCM de todos os produtos da categoria "legumes" para 0708.
+        -   `db.produtos.updateMany({"categoria.descricao": "legumes"}, {$set: {ncm: 0708}})`
