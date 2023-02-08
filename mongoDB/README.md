@@ -172,6 +172,8 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
     -   $lt: "less than" (menor que)
     -   $lte ou $gte: "less than or equal" (menor que ou igual) e "greater than or equal" (maior que ou igual)
     -   $or: "ou".
+    -   &in: pode servir como alternativa ao operador $or.
+    -   &nin: "not in".
 -   Exemplo 01: listar apenas produtos que tem preço maior que R$4.00
 
     -   `db.produtos.find({preço: {$gt: 4}})`
@@ -183,3 +185,11 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 -   Exemplo 03: listar clientes que morem no endereço "Avenida Barbeiro Barbosa" ou tenham o sobrenome "Lacerda".
 
 -   `db.clientes.find({$or: [{endereço: 'Avenida Barbeiro Barbosa'}, {ultimo_nome: "Lacerda"}] })`
+
+-   Exemplo 04: listar produtos que tenham preços R$0.50, R$2.00 ou R$5.00
+
+-   `db.produtos.find({preço: {$in: [0.5, 2.00, 5.00]}})`
+
+-   Exemplo 05: listar produtos que não tenham os preços R$3.00, R$4.00 ou R$5.00
+
+-   `db.produtos.find({preço: {$nin: [3.00, 4.00, 5.00]}})`
