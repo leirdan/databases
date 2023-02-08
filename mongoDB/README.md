@@ -180,16 +180,27 @@ Dessa forma, as consultas de dados podem ser mais fáceis a depender do caso. O 
 
 -   Exemplo 02: listar os produtos com preço menor que R$3.00 e que são da categoria "vegetais"
 
--   `db.produtos.find({preco: {$lt: 3}}, {categoria: {descricao: "vegetais"}})`
+    -   `db.produtos.find({preco: {$lt: 3}}, {categoria: {descricao: "vegetais"}})`
 
 -   Exemplo 03: listar clientes que morem no endereço "Avenida Barbeiro Barbosa" ou tenham o sobrenome "Lacerda".
 
--   `db.clientes.find({$or: [{endereço: 'Avenida Barbeiro Barbosa'}, {ultimo_nome: "Lacerda"}] })`
+    -   `db.clientes.find({$or: [{endereço: 'Avenida Barbeiro Barbosa'}, {ultimo_nome: "Lacerda"}] })`
 
 -   Exemplo 04: listar produtos que tenham preços R$0.50, R$2.00 ou R$5.00
 
--   `db.produtos.find({preço: {$in: [0.5, 2.00, 5.00]}})`
+    -   `db.produtos.find({preço: {$in: [0.5, 2.00, 5.00]}})`
 
 -   Exemplo 05: listar produtos que não tenham os preços R$3.00, R$4.00 ou R$5.00
 
--   `db.produtos.find({preço: {$nin: [3.00, 4.00, 5.00]}})`
+    -   `db.produtos.find({preço: {$nin: [3.00, 4.00, 5.00]}})`
+
+### 4.2.4 Exclusão
+
+-   **db.produtos.deleteOne({...})**: método que deleta um documento a partir de um determinado campo (de preferência o \_id, já que cada documento tem um \_id único).
+
+    -   Exemplo: deletar o produto "arroz branco"
+        -   `db.produtos.deleteOne({_id: ObjectId("63dfc81e13c95341ad23f5d9")})`
+
+-   **db.clientes.deleteMany({...})**: método que deleta vários documentos a partir de um único campo.
+    -   Exemplo: deletar todos os clientes que têm "Lacerda" no sobrenome
+        -   `db.clientes.deleteMany({ultimo_nome: "Lacerda"})`
